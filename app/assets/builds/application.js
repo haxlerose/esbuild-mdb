@@ -29271,25 +29271,28 @@
   application.debug = false;
   window.Stimulus = application;
 
-  // app/javascript/controllers/home_controller.js
+  // app/javascript/controllers/datatable_controller.js
   var import_mdb_ui_kit = __toESM(require_mdb_min());
-  var home_controller_default = class extends Controller {
+  var datatable_controller_default = class extends Controller {
     connect() {
       console.log("Home Controller Connected");
-      console.log("dataValue below");
-      console.log(this.dataValue);
       this.elementToRender();
     }
     elementToRender() {
-      console.log("elementToRender function");
-      new import_mdb_ui_kit.Datatable(this.renderElementTarget, this.dataValue, this.styleValue);
+      new import_mdb_ui_kit.Datatable(this.renderElementTarget, Object.fromEntries(this.datatableArguments()), this.styleValue);
+    }
+    datatableArguments() {
+      return /* @__PURE__ */ new Map([
+        ["columns", this.configValue],
+        ["rows", this.dataValue]
+      ]);
     }
   };
-  __publicField(home_controller_default, "targets", ["renderElement"]);
-  __publicField(home_controller_default, "values", { data: Object, style: Object });
+  __publicField(datatable_controller_default, "targets", ["renderElement"]);
+  __publicField(datatable_controller_default, "values", { config: Array, data: Array, style: Object });
 
   // app/javascript/controllers/index.js
-  application.register("home", home_controller_default);
+  application.register("datatable", datatable_controller_default);
 })();
 /*!
  * Chart.js v2.9.4

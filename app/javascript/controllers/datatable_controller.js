@@ -5,21 +5,25 @@ import { Datatable } from 'mdb-ui-kit'
 
 export default class extends Controller {
   static targets = ['renderElement']
-  static values = { data: Object, style: Object }
+  static values = { config: Array, data: Array, style: Object }
 
   connect() {
     console.log('Home Controller Connected')
-    console.log('dataValue below')
-    console.log(this.dataValue)
     this.elementToRender()
   }
 
   elementToRender() {
-    console.log('elementToRender function')
     new Datatable(
       this.renderElementTarget,
-      this.dataValue,
+      Object.fromEntries(this.datatableArguments()),
       this.styleValue
     )
+  }
+
+  datatableArguments() {
+    return new Map([
+      ['columns', this.configValue],
+      ['rows', this.dataValue]
+    ])
   }
 }

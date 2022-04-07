@@ -1,4 +1,4 @@
 import { application } from "./application"
 
-import HomeController from "./home_controller.js"
-application.register("home", HomeController)
+import DatatableController from "./datatable_controller.js"
+application.register("datatable", DatatableController)

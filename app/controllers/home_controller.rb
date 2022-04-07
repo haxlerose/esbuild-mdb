@@ -2,32 +2,15 @@
 
 class HomeController < ApplicationController
   def show
-    @home_data = test_data
+    @home_data = data_rows(111)
   end
 
   private
 
-  def test_data
-    {
-      columns: [
-        { label: 'Tenant', width: 100, fixed: true, sort: false },
-        { label: 'ID' },
-        { label: 'Type' },
-        { label: 'Severity' },
-        { label: 'Time' },
-        { label: 'Source' },
-        { label: 'Destination' },
-        { label: 'Account' },
-        { label: 'Info' }
-      ],
-      rows: data_rows(111)
-    }.to_json
-  end
-
   def data_rows(amount)
     (1..amount).each_with_object([]) do |_, array|
       sd = source_destination
-      array << [tenant, id, type, severity, time, sd, sd, account, info]
+      array << [id, tenant, type, severity, time, sd, sd, account, info]
     end
   end
 
