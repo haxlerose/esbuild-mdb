@@ -3,15 +3,13 @@
 class HomeController < ApplicationController
   def show
     @home_data = test_data
-    puts ">>>>> DATA FROM CONTROLLER: #{@home_data}"
   end
 
   private
 
   def test_data
-    sd = source_destination
     {
-      'columns' => [
+      columns: [
         { label: 'Tenant', width: 100, fixed: true, sort: false },
         { label: 'ID' },
         { label: 'Type' },
@@ -22,19 +20,15 @@ class HomeController < ApplicationController
         { label: 'Account' },
         { label: 'Info' }
       ],
-      rows: [
-        [tenant, id, type, severity, time, sd, sd, account, info],
-        [tenant, id, type, severity, time, sd, sd, account, info],
-        [tenant, id, type, severity, time, sd, sd, account, info],
-        [tenant, id, type, severity, time, sd, sd, account, info],
-        [tenant, id, type, severity, time, sd, sd, account, info],
-        [tenant, id, type, severity, time, sd, sd, account, info],
-        [tenant, id, type, severity, time, sd, sd, account, info],
-        [tenant, id, type, severity, time, sd, sd, account, info],
-        [tenant, id, type, severity, time, sd, sd, account, info],
-        [tenant, id, type, severity, time, sd, sd, account, info]
-      ]
+      rows: data_rows(111)
     }.to_json
+  end
+
+  def data_rows(amount)
+    (1..amount).each_with_object([]) do |_, array|
+      sd = source_destination
+      array << [tenant, id, type, severity, time, sd, sd, account, info]
+    end
   end
 
   def tenant
