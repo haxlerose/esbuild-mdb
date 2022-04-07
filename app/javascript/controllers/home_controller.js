@@ -1,6 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
-import * as mdb from 'mdb-ui-kit'
-import { Input } from 'mdb-ui-kit'
+// import * as mdb from 'mdb-ui-kit'
+// import { Input } from 'mdb-ui-kit'
+import { Datatable } from 'mdb-ui-kit'
 
 export default class extends Controller {
   static targets = ['renderElement']
@@ -15,17 +16,9 @@ export default class extends Controller {
 
   elementToRender() {
     console.log('elementToRender function')
-    new mdb.Datatable(
+    new Datatable(
       this.renderElementTarget,
-      {
-        columns: [
-          { label: 'Column 1', width: 100, fixed: true, sort: false },
-          { label: 'Column 2'}
-        ],
-        rows: [
-          ['Value 1', 'Value 2']
-        ]
-      },
+      this.dataValue,
       {
         bordered: true
       }

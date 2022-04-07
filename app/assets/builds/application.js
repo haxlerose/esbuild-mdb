@@ -29272,7 +29272,6 @@
   window.Stimulus = application;
 
   // app/javascript/controllers/home_controller.js
-  var mdb2 = __toESM(require_mdb_min());
   var import_mdb_ui_kit = __toESM(require_mdb_min());
   var home_controller_default = class extends Controller {
     connect() {
@@ -29283,15 +29282,7 @@
     }
     elementToRender() {
       console.log("elementToRender function");
-      new mdb2.Datatable(this.renderElementTarget, {
-        columns: [
-          { label: "Column 1", width: 100, fixed: true, sort: false },
-          { label: "Column 2" }
-        ],
-        rows: [
-          ["Value 1", "Value 2"]
-        ]
-      }, {
+      new import_mdb_ui_kit.Datatable(this.renderElementTarget, this.dataValue, {
         bordered: true
       });
     }
