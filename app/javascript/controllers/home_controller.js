@@ -5,7 +5,7 @@ import { Datatable } from 'mdb-ui-kit'
 
 export default class extends Controller {
   static targets = ['renderElement']
-  static values = { data: Object }
+  static values = { data: Object, style: Object }
 
   connect() {
     console.log('Home Controller Connected')
@@ -19,9 +19,7 @@ export default class extends Controller {
     new Datatable(
       this.renderElementTarget,
       this.dataValue,
-      {
-        bordered: true
-      }
+      this.styleValue
     )
   }
 }

@@ -1,5 +1,6 @@
 <%= content_tag :div, 'MDB Datatable', class: 'mb-5' %>
 <div data-controller="home"
      data-home-target="renderElement"
-     data-home-data-value="<%= @home_data %>">
+     data-home-data-value="<%= @home_data %>"
+     data-home-style-value="<%= { bordered: true, dark: false, striped: true }.to_json %>">
 </div>

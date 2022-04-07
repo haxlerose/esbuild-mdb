@@ -29282,13 +29282,11 @@
     }
     elementToRender() {
       console.log("elementToRender function");
-      new import_mdb_ui_kit.Datatable(this.renderElementTarget, this.dataValue, {
-        bordered: true
-      });
+      new import_mdb_ui_kit.Datatable(this.renderElementTarget, this.dataValue, this.styleValue);
     }
   };
   __publicField(home_controller_default, "targets", ["renderElement"]);
-  __publicField(home_controller_default, "values", { data: Object });
+  __publicField(home_controller_default, "values", { data: Object, style: Object });
 
   // app/javascript/controllers/index.js
   application.register("home", home_controller_default);
