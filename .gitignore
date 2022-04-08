@@ -22,6 +22,10 @@
 
 /public/assets
 .byebug_history
+/app/assets/builds/*
+!/app/assets/builds/.keep
+.reek.yml
+.rubocop.yml
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
