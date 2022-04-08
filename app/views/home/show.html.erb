@@ -1,21 +1,22 @@
 <%= content_tag :div, 'MDB Datatable', class: 'mb-5' %>
 <%= render partial: 'components/datatable',
            locals: {
-                     data: @home_data,
-                     config: [
-                       { label: 'ID', fixed: true },
-                       { label: 'Tenant', width: 100, fixed: false, sort: false },
-                       { label: 'Type' },
-                       { label: 'Severity' },
-                       { label: 'Time' },
-                       { label: 'Source' },
-                       { label: 'Destination' },
-                       { label: 'Account' },
-                       { label: 'Info' }
-                     ],
-                     style: {
-                              bordered: true,
-                              dark: false,
-                              striped: true
-                            }
-                   } %>
+             data: @home_data,
+             config: [
+               { label: 'ID', fixed: true },
+               { label: 'Tenant', width: 100, fixed: false, sort: false },
+               { label: 'Type' },
+               { label: 'Severity' },
+               { label: 'Time' },
+               { label: 'Source' },
+               { label: 'Destination' },
+               { label: 'Account' },
+               { label: 'Info' }
+             ],
+             style: {
+               bordered: true,
+               dark: false,
+               striped: true
+             }
+           }
+%>
