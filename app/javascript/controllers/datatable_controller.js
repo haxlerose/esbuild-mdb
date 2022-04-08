@@ -8,7 +8,7 @@ export default class extends Controller {
   static values = { config: Array, data: Array, style: Object }
 
   connect() {
-    console.log('Home Controller Connected')
+    console.log('Datatable Controller Connected')
     this.elementToRender()
   }
 

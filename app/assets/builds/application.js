@@ -29275,7 +29275,7 @@
   var import_mdb_ui_kit = __toESM(require_mdb_min());
   var datatable_controller_default = class extends Controller {
     connect() {
-      console.log("Home Controller Connected");
+      console.log("Datatable Controller Connected");
       this.elementToRender();
     }
     elementToRender() {

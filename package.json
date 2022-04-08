@@ -2,12 +2,14 @@
   "name": "esbuild-mdb",
   "private": true,
   "dependencies": {
+    "@popperjs/core": "^2.11.5",
+    "bootstrap": "^5.1.3",
     "esbuild": "^0.14.34",
     "git": "^0.1.5",
     "mdb-ui-kit": "https://oauth2:PyuKzSY13gVzxfP_ASTe@git.mdbootstrap.com/mdb/standard/mdb-ui-kit-pro-advanced.git",
     "stimulus": "^3.0.1"
   },
   "scripts": {
-	    "build": "esbuild app/javascript/application.js --bundle --sourcemap --outdir=app/assets/builds"
+    "build": "esbuild app/javascript/application.js --bundle --sourcemap --outdir=app/assets/builds"
   }
 }

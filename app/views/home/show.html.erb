@@ -1,17 +1,21 @@
 <%= content_tag :div, 'MDB Datatable', class: 'mb-5' %>
-<div data-controller="datatable"
-     data-datatable-target="renderElement"
-     data-datatable-config-value="<%= [
-       { label: 'ID', fixed: true },
-       { label: 'Tenant', width: 100, fixed: false, sort: false },
-       { label: 'Type' },
-       { label: 'Severity' },
-       { label: 'Time' },
-       { label: 'Source' },
-       { label: 'Destination' },
-       { label: 'Account' },
-       { label: 'Info' }
-     ].to_json %>"
-     data-datatable-data-value="<%= @home_data.to_json %>"
-     data-datatable-style-value="<%= { bordered: true, dark: false, striped: true }.to_json %>">
-   </div>
+<%= render partial: 'components/datatable',
+           locals: {
+                     data: @home_data,
+                     config: [
+                       { label: 'ID', fixed: true },
+                       { label: 'Tenant', width: 100, fixed: false, sort: false },
+                       { label: 'Type' },
+                       { label: 'Severity' },
+                       { label: 'Time' },
+                       { label: 'Source' },
+                       { label: 'Destination' },
+                       { label: 'Account' },
+                       { label: 'Info' }
+                     ],
+                     style: {
+                              bordered: true,
+                              dark: false,
+                              striped: true
+                            }
+                   } %>
