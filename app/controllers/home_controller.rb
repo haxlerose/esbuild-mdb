@@ -1,8 +1,12 @@
 # frozen_string_literal: true
 
 class HomeController < ApplicationController
-  def show
-    @home_data = data_rows(111)
+  def using_partial
+    @data = data_rows(111)
+  end
+
+  def using_view_component
+    @data = data_rows(111)
   end
 
   private

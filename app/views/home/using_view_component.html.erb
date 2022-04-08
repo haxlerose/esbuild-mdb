@@ -1,0 +1,22 @@
+<%= content_tag :div, 'MDB Datatable Using ViewComponent', class: 'text-center my-4 fs-3' %>
+<%=
+  render DatatableComponent.new(
+    data: @data,
+    config: [
+      { label: 'ID', fixed: true },
+      { label: 'Tenant', width: 100, fixed: false, sort: false },
+      { label: 'Type' },
+      { label: 'Severity' },
+      { label: 'Time' },
+      { label: 'Source' },
+      { label: 'Destination' },
+      { label: 'Account' },
+      { label: 'Info' }
+    ],
+    style: {
+      bordered: true,
+      dark: false,
+      striped: true
+    }
+  )
+%>
